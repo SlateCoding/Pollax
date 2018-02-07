@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pollax.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="log_path" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server\logs\</Value>
+    </Setting>
+    <Setting Name="port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5050</Value>
+    </Setting>
+    <Setting Name="webserver_dir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Pollux\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
