@@ -1,0 +1,9 @@
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.Form1.resources
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.Properties.Resources.resources
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.csproj.GenerateResource.Cache
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.csproj.CoreCompileInputs.cache
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.exe.config
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.exe
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.pdb
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.exe
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.pdb

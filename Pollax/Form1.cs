@@ -1,4 +1,6 @@
 ﻿using Imtiaz;
+using SharpRaven;
+using SharpRaven.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +44,25 @@ namespace Pollax
         private void button1_Click(object sender, EventArgs e)
         {
             MyWebServer mws = new MyWebServer();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var ravenClient = new RavenClient("https://ef857dd8c6844201918c6b8753aa9f32:f6b3388af4aa4136abf6c3872f0b6eed@sentry.io/287903");
+            try
+            {
+                int i2 = 0;
+                int i = 10 / i2;
+            }
+            catch (Exception exception)
+            {
+                ravenClient.Capture(new SentryEvent(exception));
+            }
         }
     }
 }
