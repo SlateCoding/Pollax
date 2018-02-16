@@ -50,19 +50,5 @@ namespace Pollax
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            var ravenClient = new RavenClient("https://ef857dd8c6844201918c6b8753aa9f32@sentry.io/287903");
-            try
-            {
-                int i2 = 0;
-                int i = 10 / i2;
-            }
-            catch (Exception exception)
-            {
-                ravenClient.Capture(new SentryEvent(exception));
-            }
-        }
     }
 }
