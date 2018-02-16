@@ -7,3 +7,9 @@ C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.e
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.pdb
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.exe
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.pdb
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\SharpRaven.dll
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\SharpRaven.pdb
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\SharpRaven.xml
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.csprojResolveAssemblyReference.cache
