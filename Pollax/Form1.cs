@@ -1,14 +1,4 @@
-﻿using Imtiaz;
-using SharpRaven;
-using SharpRaven.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Pollax
@@ -33,7 +23,7 @@ namespace Pollax
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+             System.Diagnostics.Process.Start(System.Windows.Forms.Application.ExecutablePath);
         }
 
         /// <summary>
@@ -49,6 +39,13 @@ namespace Pollax
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+
+        { 
+            int Zero = 0;
+            int blah = 7 / Zero;
         }
     }
 }

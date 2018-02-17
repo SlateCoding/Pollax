@@ -260,15 +260,6 @@ namespace Pollax // made by Imiataz Alam
             
         }
 
-
-        // Application Starts Here..
-        public static void Main()
-        {
-            MyWebServer MWS = new MyWebServer();
-        }
-
-
-
         //This method Accepts new connection and
         //First it receives the welcome massage from the client,
         //Then it sends the Current date time to the Client.
@@ -475,5 +466,6 @@ namespace Pollax // made by Imiataz Alam
                 }
             }
         }
+
     }
 }
