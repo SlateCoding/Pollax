@@ -3,13 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="log_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">server\logs\</Value>
+      <Value Profile="(Default)">C:/pollaxdata/logs/</Value>
     </Setting>
     <Setting Name="port" Type="System.String" Scope="User">
       <Value Profile="(Default)">5050</Value>
     </Setting>
     <Setting Name="webserver_dir" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Pollux\</Value>
+      <Value Profile="(Default)">C:\Pollax\</Value>
+    </Setting>
+    <Setting Name="report_error" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

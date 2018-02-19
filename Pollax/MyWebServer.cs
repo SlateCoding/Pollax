@@ -3,6 +3,7 @@ using System.Text;
 using System;
 using System.IO;
 using System.Threading;
+using NLog;
 
 namespace Pollax // made by Imiataz Alam
 {
@@ -16,6 +17,8 @@ namespace Pollax // made by Imiataz Alam
         static string _port = Properties.Settings.Default.port;
         int port = int.Parse(_port);
 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         //The constructor which make the TcpListener start listening on the
         //given port. It also calls a Thread on the method StartListen(). 
         public MyWebServer()
@@ -24,7 +27,7 @@ namespace Pollax // made by Imiataz Alam
                 //start listing on the given port
                 myListener = new TcpListener(port);
                 myListener.Start();
-                servertell.do_("Web Server Running... Press ^C to Stop...");
+                logger.Info("Web Server Running...");
                 //start the thread which calls the method 'StartListen'
                 Thread th = new Thread(new ThreadStart(StartListen));
                 th.Start();
@@ -48,7 +51,7 @@ namespace Pollax // made by Imiataz Alam
 
                 //Open the default.dat to find out the list
                 // of default file
-                sr = new StreamReader("server\\data\\Default.Dat");
+                sr = new StreamReader(@"C:\pollaxdata\server\data\Default.Dat");
 
                 while ((sLine = sr.ReadLine()) != null)
                 {
@@ -88,7 +91,7 @@ namespace Pollax // made by Imiataz Alam
             sFileExt = sRequestedFile.Substring(iStartPos);
 
                 //Open the Vdirs.dat to find out the list virtual directories
-                sr = new StreamReader("server\\data\\Mime.Dat");
+                sr = new StreamReader(@"C:\pollaxdata\server\data\mime.dat");
 
                 while ((sLine = sr.ReadLine()) != null)
                 {
@@ -151,7 +154,7 @@ namespace Pollax // made by Imiataz Alam
 
 
                 //Open the Vdirs.dat to find out the list virtual directories
-                sr = new StreamReader("server\\data\\VDirs.Dat");
+                sr = new StreamReader(@"C:\pollaxdata\server\data\vdirs.dat");
 
                 while ((sLine = sr.ReadLine()) != null)
                 {
@@ -178,9 +181,9 @@ namespace Pollax // made by Imiataz Alam
             
 
 
-            servertell.do_("Virtual Dir : " + sVirtualDir);
-            servertell.do_("Directory   : " + sDirName);
-            servertell.do_("Physical Dir: " + sRealDir);
+            logger.Info("Virtual Dir : " + sVirtualDir);
+            logger.Info("Directory   : " + sDirName);
+            logger.Info("Physical Dir: " + sRealDir);
             if (sVirtualDir == sDirName)
                 return sRealDir;
             else
@@ -218,7 +221,7 @@ namespace Pollax // made by Imiataz Alam
 
             SendToBrowser(bSendData, ref mySocket);
 
-            servertell.do_("Total Bytes : " + iTotBytes.ToString());
+            logger.Info("Total Bytes : " + iTotBytes.ToString());
 
         }
 
@@ -249,14 +252,14 @@ namespace Pollax // made by Imiataz Alam
                 if (mySocket.Connected)
                 {
                     if ((numBytes = mySocket.Send(bSendData, bSendData.Length, 0)) == -1)
-                        servertell.do_("Socket Error cannot Send Packet");
+                        logger.Info("Socket Error cannot Send Packet");
                     else
                     {
-                        servertell.do_("Number of bytes sent:" + numBytes);
+                        logger.Info("Number of bytes sent:" + numBytes);
                     }
                 }
                 else
-                    servertell.do_("Connection Dropped....");
+                    logger.Info("Connection Dropped....");
             
         }
 
@@ -284,10 +287,10 @@ namespace Pollax // made by Imiataz Alam
                 //Accept a new connection
                 Socket mySocket = myListener.AcceptSocket();
 
-                servertell.do_("Socket Type " + mySocket.SocketType);
+                logger.Info("Socket Type " + mySocket.SocketType);
                 if (mySocket.Connected)
                 {
-                    servertell.do_("\nNew client connected. Client IP address:" + mySocket.RemoteEndPoint);
+                    logger.Info("\nNew client connected. Client IP address:" + mySocket.RemoteEndPoint);
 
 
 
@@ -305,7 +308,7 @@ namespace Pollax // made by Imiataz Alam
                     //At present we will only deal with GET type
                     if (sBuffer.Substring(0, 3) != "GET")
                     {
-                        servertell.do_("Only Get Method is supported..");
+                        logger.Info("Only Get Method is supported..");
                         mySocket.Close();
                         return;
                     }
@@ -358,7 +361,7 @@ namespace Pollax // made by Imiataz Alam
                     }
 
 
-                    servertell.do_("Directory Requested : " + sLocalDir);
+                    logger.Info("Directory Requested : " + sLocalDir);
 
                     //If the physical directory does not exists then
                     // dispaly the error message
@@ -415,7 +418,7 @@ namespace Pollax // made by Imiataz Alam
 
                     //Build the physical path
                     sPhysicalFilePath = sLocalDir + sRequestedFile;
-                    servertell.do_("File Requested : " + sPhysicalFilePath);
+                    logger.Info("File Requested : " + sPhysicalFilePath);
 
 
                     if (File.Exists(sPhysicalFilePath) == false)
@@ -425,7 +428,7 @@ namespace Pollax // made by Imiataz Alam
                         SendHeader(sHttpVersion, "", sErrorMessage.Length, " 404 Not Found", ref mySocket);
                         SendToBrowser(sErrorMessage, ref mySocket);
 
-                        servertell.do_(sFormattedMessage);
+                        logger.Info(sFormattedMessage);
                     }
 
                     else

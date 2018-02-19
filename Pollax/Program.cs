@@ -15,10 +15,10 @@ namespace Pollax
         [STAThread]
         static void Main()
         {
-            Application.ThreadException += new ThreadExceptionEventHandler(Error.Initialize);
+            Application.ThreadException += new ThreadExceptionEventHandler(Form1.ThreadException);
             // Add the event handler for handling non-UI thread exceptions to the event. 
             AppDomain.CurrentDomain.UnhandledException +=
-                new UnhandledExceptionEventHandler(Error.Initialize);
+                new UnhandledExceptionEventHandler(Form1.Exception);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

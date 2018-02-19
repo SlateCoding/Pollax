@@ -13,4 +13,6 @@ C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Newtonso
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\SharpRaven.pdb
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\SharpRaven.xml
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.csprojResolveAssemblyReference.cache
-C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.Error.resources
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.config
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.dll
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.xml

@@ -12,7 +12,7 @@ namespace Pollax.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace Pollax.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("server\\logs\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:/pollaxdata/logs/")]
         public string log_path {
             get {
                 return ((string)(this["log_path"]));
@@ -49,13 +49,25 @@ namespace Pollax.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Pollux\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Pollax\\")]
         public string webserver_dir {
             get {
                 return ((string)(this["webserver_dir"]));
             }
             set {
                 this["webserver_dir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool report_error {
+            get {
+                return ((bool)(this["report_error"]));
+            }
+            set {
+                this["report_error"] = value;
             }
         }
     }
