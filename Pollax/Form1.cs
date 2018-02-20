@@ -107,6 +107,19 @@ namespace Pollax
         {
             Properties.Settings.Default.webserver_dir = textBox1.Text;
             Properties.Settings.Default.Save();
+
+            //alert the user of the gravity of the situation
+            MessageBox.Show(
+                owner: this,
+                text: "You will have to manually edit vdirs.dat and make the necessary changes in File Explorer before Pollax will work again.",
+                caption: "Warning"
+            );
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string root_dir = Properties.Settings.Default.webserver_dir;
+            textBox1.Text = root_dir;
         }
     }
 }
