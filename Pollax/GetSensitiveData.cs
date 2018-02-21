@@ -10,7 +10,7 @@ namespace Pollax.Server.Data
     {
         internal static string GetDSN()
         {
-            return "https://29430e9b627d461f910632fa2b7eded3:45296cf0199848f9bf33841ad398ecdf@sentry.io/287903";
+            return "https://cf14a7b5161d4111b665f6938f8502d7:922f311564ed406e8154c72a3f6de4fc@sentry.io/287903";
         }
 
         internal static string GetGPGKeyPassword()

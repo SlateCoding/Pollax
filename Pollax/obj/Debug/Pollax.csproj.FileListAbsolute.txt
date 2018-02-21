@@ -16,3 +16,8 @@ C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.c
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.config
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.dll
 C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\NLog.xml
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.exe.manifest
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\bin\Debug\Pollax.application
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.TrustInfo.xml
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.exe.manifest
+C:\Users\Eliyahu\Programming\Programming\Pollax\Pollax\Pollax\obj\Debug\Pollax.application
