@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>If you re seeing this text, then something went wrong.
+
+
+Please file an issue here:
+https://github.com/eligeorgios/Pollax/issues/new
+
+
+Remeber to include the log file here:
+"C:\pollaxdata\logs\ServerLog.log"</value>
+  </data>
 </root>

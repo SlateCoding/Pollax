@@ -1,6 +1,8 @@
 ﻿using SharpRaven;
 using SharpRaven.Data;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -20,8 +22,7 @@ namespace Pollax
 
         internal static void ThreadException(object sender, ThreadExceptionEventArgs args)
         {
-
-            if (Properties.Settings.Default.report_error == true)
+            if (bool.Parse(File.ReadAllText(@"C:\pollaxdata\server\pref\report_error.dat")))
             {
                 Exception error = args.Exception;
                 string dsn = Pollax.Server.Data.GetSensitiveData.GetDSN();
@@ -96,17 +97,14 @@ namespace Pollax
 
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-            string root_dir = Properties.Settings.Default.webserver_dir;
-
-            textBox1.Text = root_dir; 
-        }
+        private void tabPage2_Click(object sender, EventArgs e) { }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.webserver_dir = textBox1.Text;
-            Properties.Settings.Default.Save();
+            Process.Start(
+                fileName: "notepad.exe", 
+                arguments: @"C:\pollaxdata\server\pref\webserver_dir.dat"
+                );
 
             //alert the user of the gravity of the situation
             MessageBox.Show(
@@ -118,8 +116,46 @@ namespace Pollax
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string root_dir = Properties.Settings.Default.webserver_dir;
-            textBox1.Text = root_dir;
+            label2.Text = File.ReadAllText(@"C:\pollaxdata\server\pref\port.dat");
+
+            //start loggin tab
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                File.WriteAllText
+                (
+                    path: @"C:\pollaxdata\server\pref\report_error.dat",
+                    contents: "true"
+                );
+            }
+
+            else if (!checkBox1.Checked)
+            {
+                File.WriteAllText
+                (
+                    path: @"C:\pollaxdata\server\pref\report_error.dat",
+                    contents: "false"
+                );
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int newport = int.Parse(maskedTextBox1.Text);
+            File.WriteAllText(@"C:\pollaxdata\server\pref\port.dat", newport.ToString());
         }
     }
 }
