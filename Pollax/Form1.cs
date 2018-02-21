@@ -157,5 +157,6 @@ namespace Pollax
             int newport = int.Parse(maskedTextBox1.Text);
             File.WriteAllText(@"C:\pollaxdata\server\pref\port.dat", newport.ToString());
         }
+>>>>>>> 5bcc10ab5c2c1d08a02885d3a6cf4eecbe5bcb66
     }
 }
