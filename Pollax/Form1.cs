@@ -2,6 +2,7 @@
 using SharpRaven.Data;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -119,6 +120,20 @@ namespace Pollax
             label2.Text = File.ReadAllText(@"C:\pollaxdata\server\pref\port.dat");
 
             //start loggin tab
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Tick += new EventHandler(TimerEventProcessor);
+
+            // set the timer interval to 5 sec. or 5000 mill. sec.
+            timer.Interval = 5000;
+            timer.Start();
+        }
+
+        private void TimerEventProcessor(object sender, EventArgs e)
+        {
+            string text = File.ReadAllText(@"C:\pollaxdata\logs\ServerLog.log");
+            textBox2.Text = text;
+            textBox2.SelectionStart = textBox2.Text.Length - 1; // add some logic if length is 0
+            textBox2.SelectionLength = 0;
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -157,6 +172,15 @@ namespace Pollax
             int newport = int.Parse(maskedTextBox1.Text);
             File.WriteAllText(@"C:\pollaxdata\server\pref\port.dat", newport.ToString());
         }
->>>>>>> 5bcc10ab5c2c1d08a02885d3a6cf4eecbe5bcb66
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://sentry.io/share/issue/9a2f011a0b0f43b88fdd464cfc33a60f/");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/eligeorgios/Pollax/blob/master/Error%20Reporting%20Privacy%20Policy.md");
+        }
     }
 }
