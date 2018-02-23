@@ -1,5 +1,5 @@
 # Pollax
-## The Win10 Webserver for absolute dummies.
+## A simple server for Windows.
 ---
 
 This project was created just for fun and educational purposes; please do not take it seriously...
