@@ -81,6 +81,7 @@ namespace Pollax
         private void button2_Click(object sender, EventArgs e)
         {
              System.Diagnostics.Process.Start(System.Windows.Forms.Application.ExecutablePath);
+            Application.Exit();
         }
 
         /// <summary>
@@ -115,9 +116,19 @@ namespace Pollax
             );
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            label2.Text = File.ReadAllText(@"C:\pollaxdata\server\pref\port.dat");
+            label2.Text = "Current Port Used: " + File.ReadAllText(@"C:\pollaxdata\server\pref\port.dat");
+            bool reprterr = bool.Parse(File.ReadAllText(@"C:\pollaxdata\server\pref\report_error.dat"));
+            if (reprterr)
+            {
+                checkBox1.Checked = true;
+            }
 
             //start loggin tab
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -171,6 +182,7 @@ namespace Pollax
         {
             int newport = int.Parse(maskedTextBox1.Text);
             File.WriteAllText(@"C:\pollaxdata\server\pref\port.dat", newport.ToString());
+            label2.Text = "Current Port: " + newport.ToString();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

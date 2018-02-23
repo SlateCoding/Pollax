@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Threading;
 using NLog;
+using System.Windows.Forms;
 
 namespace Pollax // made by Imiataz Alam
 {
@@ -26,7 +27,14 @@ namespace Pollax // made by Imiataz Alam
 
                 //start listing on the given port
                 myListener = new TcpListener(port);
+            try
+            {
                 myListener.Start();
+            }
+            catch (SocketException)
+            {
+                MessageBox.Show("Whoops: Server already started!!!!");
+            }
                 logger.Info("Web Server Running...");
                 //start the thread which calls the method 'StartListen'
                 Thread th = new Thread(new ThreadStart(StartListen));
@@ -275,7 +283,7 @@ namespace Pollax // made by Imiataz Alam
             String sRequestedFile;
             String sErrorMessage;
             String sLocalDir;
-            String sMyWebServerRoot = Pollax.Properties.Settings.Default.webserver_dir;
+            String sMyWebServerRoot = File.ReadAllText(@"C:\pollaxdata\server\pref\webserver_dir.dat");
             String sPhysicalFilePath = "";
             String sFormattedMessage = "";
             String sResponse = "";
@@ -308,7 +316,8 @@ namespace Pollax // made by Imiataz Alam
                     //At present we will only deal with GET type
                     if (sBuffer.Substring(0, 3) != "GET")
                     {
-                        logger.Info("Only Get Method is supported..");
+                        logger.Info("Error: POST method not supported.");
+                        SendToBrowser("Error 405 <br /><br /> POST Method Not Supported", ref mySocket);
                         mySocket.Close();
                         return;
                     }
@@ -367,7 +376,7 @@ namespace Pollax // made by Imiataz Alam
                     // dispaly the error message
                     if (sLocalDir.Length == 0)
                     {
-                        sErrorMessage = "<H2>Error!! Requested Directory does not exists</H2><Br>";
+                        sErrorMessage = "<H2>Error 404 <br /><br />File Directory Not Found</H2>";
                         //sErrorMessage = sErrorMessage + "Please check data\\Vdirs.Dat";
 
                         //Format The Message

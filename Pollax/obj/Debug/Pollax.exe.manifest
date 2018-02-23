@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pollax.exe" size="25088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pollax.exe" size="25600">
       <assemblyIdentity name="Pollax" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lLgAljIYY1P/pXtPeDlC/VFUio1ie40cD/wxslzw5fU=</dsig:DigestValue>
+        <dsig:DigestValue>PM3BWj1mstiEZP1u8u3mjdy/G8BMF/+UYVCp7IIMH9Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
